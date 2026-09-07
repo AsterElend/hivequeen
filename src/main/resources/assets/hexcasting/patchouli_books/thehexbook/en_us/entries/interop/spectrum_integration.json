@@ -1,0 +1,28 @@
+{
+  "name": "hivequeen.entry.spectrum.name",
+  "icon": "spectrum:paintbrush",
+  "category": "hexcasting:interop",
+  "flag": "mod:spectrum",
+  "hide_while_locked": false,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "hivequeen.entry.spectrum.name",
+      "text": "hivequeen.entry.spectrum.about"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "title": "hivequeen.media",
+      "item":{ "item":"spectrum:topaz_shard"},
+      "text": "hivequeen.entry.spectrum.text1"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "hivequeen.entry.spectrum.text2"
+    },
+    {"type": "patchouli:text",
+    "text": "hivequeen.entry.spectrum.about_bangle_break"
+    }
+
+  ]
+}

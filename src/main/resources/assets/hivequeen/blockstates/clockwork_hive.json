@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "hivequeen:block/clockwork_hive",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "hivequeen:block/clockwork_hive"
+    },
+    "facing=south": {
+      "model": "hivequeen:block/clockwork_hive",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "hivequeen:block/clockwork_hive",
+      "y": 270
+    }
+  }
+}

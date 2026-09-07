@@ -1,0 +1,14 @@
+{
+  "name": "hivequeen.entry.socks.name",
+  "icon": "hivequeen:jewel_socks",
+  "category": "hexcasting:interop",
+  "flag": "mod:trinkets",
+  "hide_while_locked": true,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hivequeen:jewel_socks",
+      "text": "hivequeen.entry.socks.description"
+    }
+  ]
+}

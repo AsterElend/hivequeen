@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "hivequeen",
+	"version": "${version}",
+	"name": "Hive Queen",
+	"description": "An addon for Hexcasting, involving many things",
+	"authors": [
+		"Aster"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/hivequeen/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "aster.hivequeen.HiveQueen"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "aster.hivequeen.datagen.HiveQueenDataGenerator"
+
+			}
+		],
+		"emi": ["aster.hivequeen.integrations.HiveQueenEmiPlugin"],
+		"modmenu":[ "aster.hivequeen.integrations.ModMenuScreen"]
+	},
+	"mixins": [
+		"hivequeen.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	}
+}

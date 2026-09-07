@@ -1,0 +1,19 @@
+{
+  "name": "hivequeen.entry.hive.name",
+  "flag": "hivequeen:show_clockwork_hive_entry",
+  "icon": "hivequeen:clockwork_hive",
+  "category": "hexcasting:items",
+  "hide_while_locked": "true",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "hivequeen.entry.hive.intro"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "hivequeen:clockwork_hive",
+      "text": "hivequeen.entry.hive.description"
+    }
+  ]
+
+}

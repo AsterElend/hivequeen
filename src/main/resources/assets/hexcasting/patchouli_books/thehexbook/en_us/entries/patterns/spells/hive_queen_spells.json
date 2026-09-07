@@ -1,0 +1,37 @@
+{
+  "name": "hivequeen.entry.spells",
+  "icon": "hivequeen:icon.png",
+  "category": "hexcasting:patterns/spells",
+  "advancement": "hexcasting:root",
+  "pages": [
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hivequeen:bangle_break",
+      "anchor": "hivequeen:bangle_break",
+      "input": "vec, (vec | itemEntity | mote)",
+      "output": "",
+      "text": "hivequeen.page.bangle"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hivequeen:plasma_beam",
+      "anchor": "hivequeen:plasma_beam",
+      "input": "vec, vec",
+      "output": "",
+      "text": "hivequeen.plasma.description"
+    },
+    {
+      "advancement": "hexcasting:enlightenment",
+      "type": "patchouli:text",
+      "text": "hivequeen.page.barrier"
+    },
+    {
+      "advancement": "hexcasting:enlightenment",
+      "type": "hexcasting:pattern",
+      "op_id": "hivequeen:toggle_healthcast",
+      "anchor": "hivequeen:toggle_healthcast",
+      "input": "",
+      "output": ""
+    }
+  ]
+}

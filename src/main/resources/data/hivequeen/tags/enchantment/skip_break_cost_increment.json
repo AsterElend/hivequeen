@@ -1,0 +1,23 @@
+{
+  "values": [
+    {
+      "id": "spectrum:razing",
+      "required": false
+    },
+    {
+      "id": "spectrum:inexorable",
+      "required": false
+    },
+    {
+      "id": "spectrum:inertia",
+      "required": false
+    },
+    {
+      "id": "spectrum:indestructible",
+      "required": false
+    },
+    "minecraft:efficiency",
+    "minecraft:mending",
+    "minecraft:unbreaking"
+  ]
+}

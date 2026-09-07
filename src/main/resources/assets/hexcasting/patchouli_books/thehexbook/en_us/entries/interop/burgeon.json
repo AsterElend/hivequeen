@@ -1,0 +1,26 @@
+{
+  "name": "hivequeen.entry.burgeon.name",
+  "icon": "botania:fertilizer",
+  "category": "hexcasting:interop",
+  "flag": "mod:botania",
+  "hide_while_locked": false,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "hivequeen.entry.burgeon.mana",
+      "text": "hivequeen.entry.burgeon.about"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hivequeen:burgeon",
+      "anchor": "hivequeen:burgeon",
+      "input": "vec",
+      "output": ""
+    },
+    {
+      "type": "patchouli:text",
+      "text": "hivequeen.entry.burgeon.spell_description"
+    }
+
+  ]
+}

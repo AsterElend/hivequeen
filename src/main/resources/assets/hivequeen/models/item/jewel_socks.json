@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "hivequeen:item/jewel_socks"
+  }
+}
