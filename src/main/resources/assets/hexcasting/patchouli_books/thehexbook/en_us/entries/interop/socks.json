@@ -9,6 +9,11 @@
       "type": "patchouli:spotlight",
       "item": "hivequeen:jewel_socks",
       "text": "hivequeen.entry.socks.description"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hivequeen:jewel_socks",
+      "title": "item.hivequeen.jewel_socks"
     }
   ]
 }

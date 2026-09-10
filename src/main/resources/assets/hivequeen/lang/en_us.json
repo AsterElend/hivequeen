@@ -1,5 +1,6 @@
 {
   "emi.category.hexal.freeze": "Freeze",
+  "emi.category.hivequeen.clockwork_hive": "Great Scroll Synthesis",
   "hivequeen.entry.spectrum.name": "Colorful Crystals",
   "hivequeen.entry.spectrum.about": "It seems that media and colour are more interlinked than I first assumed...",
   "hivequeen.entry.spectrum.text1": "All Spectrum gemstone shards and powders can now be used as media! A powder is worth one-fifth its corresponding shard.",
@@ -24,5 +25,5 @@
   "hivequeen.entry.socks.description": "These socks redistribute the ambient flow of media around me, allowing more rings to function.",
   "hivequeen.entry.hive.name": "Great Spell Synthesis",
   "hivequeen.entry.hive.intro": "If all of the great spells are contained in Nature, than a sufficiently complicated thinking engine should be able to precipitate out the correct patterns, given inspirations to work from. A bee should be perfect for this, for the mind of a bee is already only a fragment of a greater whole.",
-  "hivequeen.entry.hive.description": "Tossing the items of inspiration around the hive and pressing a large scroll to it will command the engine to begin it's work. $(br2) $(o) All bees are simply the extensions of the same being, The Swarm. "
+  "hivequeen.entry.hive.description": "Tossing the items of inspiration around the hive and pressing a large scroll to it will command the engine to begin it's work. $(br2) $(o) All bees are simply extensions of the same being, The Swarm. "
 }

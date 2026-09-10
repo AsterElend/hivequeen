@@ -1,0 +1,9 @@
+{
+  "type": "hivequeen:clockwork_hive",
+  "greatSpell": "hexcasting:create_lava",
+  "inputs": [
+    {"item": "hexcasting:charged_amethyst"},
+    {"item":  "minecraft:lava_bucket"},
+    {"item": "minecraft:dispenser"}
+  ]
+}

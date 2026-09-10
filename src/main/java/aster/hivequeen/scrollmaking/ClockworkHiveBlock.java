@@ -3,7 +3,6 @@ package aster.hivequeen.scrollmaking;
 import at.petrak.hexcasting.api.casting.ParticleSpray;
 import at.petrak.hexcasting.common.lib.HexItems;
 import at.petrak.hexcasting.xplat.IXplatAbstractions;
-import net.minecraft.block.BeehiveBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.ItemEntity;

@@ -5,13 +5,10 @@ import at.petrak.hexcasting.api.casting.RenderedSpell
 import at.petrak.hexcasting.api.casting.castables.SpellAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getBlockPos
-import at.petrak.hexcasting.api.casting.getVec3
 import at.petrak.hexcasting.api.casting.iota.Iota
 import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.ktxt.UseOnContext
-import net.minecraft.block.Blocks
 import net.minecraft.item.ItemStack
-import net.minecraft.item.Items
 import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.util.Hand
 import net.minecraft.util.hit.BlockHitResult
@@ -33,7 +30,7 @@ object OpBurgeon: SpellAction{
         return SpellAction.Result(
             Spell(target),
             (MediaConstants.DUST_UNIT * 1.125 * 5).toLong(),
-            listOf(ParticleSpray.burst(Vec3d.ofCenter(BlockPos(target)), 1.0))
+            listOf(ParticleSpray.burst(Vec3d.ofCenter(BlockPos(target).up()), 1.0))
         )
     }
 

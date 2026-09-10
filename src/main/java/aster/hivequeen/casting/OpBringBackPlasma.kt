@@ -3,25 +3,18 @@ package aster.hivequeen.casting
 import at.petrak.hexcasting.api.casting.RenderedSpell
 import at.petrak.hexcasting.api.casting.castables.SpellAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
-import at.petrak.hexcasting.api.casting.eval.env.PlayerBasedCastEnv
 import at.petrak.hexcasting.api.casting.getVec3
 import at.petrak.hexcasting.api.casting.iota.Iota
-import at.petrak.hexcasting.common.blocks.behavior.HexComposting
 import at.petrak.hexcasting.xplat.IXplatAbstractions
-import net.minecraft.entity.Entity
 import net.minecraft.entity.LivingEntity
-import net.minecraft.entity.damage.DamageSource
-import net.minecraft.entity.damage.DamageSources
-import net.minecraft.entity.damage.DamageType
 import net.minecraft.entity.projectile.ProjectileUtil
-import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.util.hit.EntityHitResult
 import net.minecraft.util.math.Box
 import net.minecraft.util.math.Vec3d
 import net.minecraft.world.RaycastContext
-import ram.talia.hexal.common.casting.actions.spells.OpParticles
 import ram.talia.hexal.common.network.MsgParticleLinesAck
 import kotlin.math.pow
+@Suppress("deprecation")
 object OpBringBackPlasma : SpellAction {
     override val argc = 2
 

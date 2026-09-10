@@ -1,0 +1,18 @@
+{
+"type" : "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "D": {"item": "minecraft:diamond"},
+    "A": {"item": "minecraft:amethyst_shard"},
+    "W": {"tag": "minecraft:wool"}
+  },
+  "pattern": [
+    "A A",
+    "W W",
+    "D D"
+  ],
+  "result": {
+    "item": "hivequeen:jewel_socks"
+  },
+  "show_notification": "false"
+}

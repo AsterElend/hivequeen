@@ -43,12 +43,6 @@ public class HiveQueenItems {
     public static void register() {
         doWeHaveTrinkets = FabricLoader.getInstance().isModLoaded("trinkets");
         JEWEL_SOCKS = registerItem("jewel_socks", new JewelSocksItem(new FabricItemSettings().maxCount(1)));
-
-
-
-
-
-        HiveQueen.LOGGER.info("Registering modded items for " + HiveQueen.MOD_ID);
         ItemGroupEvents.modifyEntriesEvent(RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier("hexcasting:hexcasting"))).register(HiveQueenItems::addToHexGroup);
     }
 
@@ -57,18 +51,18 @@ public class HiveQueenItems {
         public JewelSocksItem(Item.Settings settings) {
             super(settings);
         }
-        public static final UUID SOCK_HAND = UUID.fromString("10c64e9f-3462-424b-9fc1-3263c42cc98f");
-        public static final UUID SOCK_OFFHAND = UUID.fromString("6b322bd2-494a-4d8d-9aac-b64a703f8f36");
 
         @Override
         public Multimap<EntityAttribute, EntityAttributeModifier> getModifiers(ItemStack stack, SlotReference slot, LivingEntity entity, UUID uuid) {
+
             Multimap<EntityAttribute, EntityAttributeModifier> modifiers = super.getModifiers(stack, slot, entity, uuid);
 
 
-            SlotAttributes.addSlotModifier(modifiers, "hand/ring", SOCK_HAND, 1, EntityAttributeModifier.Operation.ADDITION);
-            SlotAttributes.addSlotModifier(modifiers, "offhand/ring", SOCK_OFFHAND, 1, EntityAttributeModifier.Operation.ADDITION);
+            SlotAttributes.addSlotModifier(modifiers, "hand/ring", uuid, 1, EntityAttributeModifier.Operation.ADDITION);
+            SlotAttributes.addSlotModifier(modifiers, "offhand/ring", uuid, 1, EntityAttributeModifier.Operation.ADDITION);
 
             return modifiers;
         }
     }
+
 }

@@ -1,24 +1,18 @@
 package aster.hivequeen.scrollmaking;
 
-import at.petrak.hexcasting.api.casting.math.HexPattern;
 import at.petrak.hexcasting.common.items.storage.ItemScroll;
 import at.petrak.hexcasting.common.lib.HexItems;
-import at.petrak.hexcasting.common.lib.HexRegistries;
-import at.petrak.hexcasting.server.ScrungledPatternsSave;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.DynamicRegistryManager;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.world.World;
@@ -32,9 +26,6 @@ public class ClockworkHiveRecipe implements Recipe<SimpleInventory> {
     private final Identifier recipeId;
     private final Identifier greatSpellId;
     private final List<Ingredient> ingredients;
-    public Identifier getGreatSpellId(){
-        return greatSpellId;
-    }
 
     public ClockworkHiveRecipe(Identifier id, List<Ingredient> ingredients, Identifier outputScroll){
         recipeId = id;

@@ -3,7 +3,6 @@ package aster.hivequeen.casting
 import aster.hivequeen.HiveQueenTags
 import at.petrak.hexcasting.api.casting.ParticleSpray
 import at.petrak.hexcasting.api.casting.RenderedSpell
-import at.petrak.hexcasting.api.casting.castables.ConstMediaAction
 import at.petrak.hexcasting.api.casting.castables.SpellAction
 import at.petrak.hexcasting.api.casting.eval.CastingEnvironment
 import at.petrak.hexcasting.api.casting.getVec3
@@ -32,13 +31,13 @@ import ram.talia.hexal.api.getMoteOrItemStackOrItemEntity
 object OpBangleBreak : SpellAction {
     override val argc = 2
     override fun execute(args: List<Iota>, env: CastingEnvironment): SpellAction.Result {
-        val asVec = args.getVec3(1, argc)
+        val asVec = args.getVec3(0, argc)
         val pos = BlockPos.ofFloored(asVec)
         env.assertPosInRangeForEditing(pos)
         val world = env.world
 
-        val maybeItemStuff = args.getMoteOrItemStackOrItemEntity(0, argc) ?:
-        throw MishapInvalidIota(args[0], 0, Text.of("ItemEntity, ItemStack or Mote!"))
+        val maybeItemStuff = args.getMoteOrItemStackOrItemEntity(1, argc) ?:
+        throw MishapInvalidIota(args[1], 1, Text.of("ItemEntity, ItemStack or Mote!"))
 
 
        val tool: ItemStack = maybeItemStuff.flatMap<ItemStack>(
@@ -60,9 +59,9 @@ object OpBangleBreak : SpellAction {
 
     fun calcCost(bangle: ItemStack, world: World, pos: BlockPos): Long {
         val enchants: Map<Enchantment?, Int?> = EnchantmentHelper.get(bangle) ?: return 0
-        var cost = MediaConstants.DUST_UNIT / 8;
+        var cost = MediaConstants.DUST_UNIT / 8
 
-        val isCheap = world.getBlockState(pos).isIn(HexTags.Blocks.CHEAP_TO_BREAK_BLOCK);
+        val isCheap = world.getBlockState(pos).isIn(HexTags.Blocks.CHEAP_TO_BREAK_BLOCK)
         if (isCheap)  cost = MediaConstants.DUST_UNIT / 100
         for (enchantment in enchants) {
             if (FabricLoader.getInstance().isModLoaded("spectrum") && enchantment is VoidingEnchantment){
@@ -83,14 +82,14 @@ object OpBangleBreak : SpellAction {
         if (entry.key == null) return false
         val key = entry.key!!
         val registryFetch = world.registryManager.get(RegistryKeys.ENCHANTMENT).getEntry(key) ?: return true
-        if (registryFetch.isIn(HiveQueenTags.SKIP_BREAK_COST_INCREMENT)) return false;
+        if (registryFetch.isIn(HiveQueenTags.SKIP_BREAK_COST_INCREMENT)) return false
         return true
     }
 
     private data class Spell(val pos: BlockPos, val world: World, val stack: ItemStack) : RenderedSpell {
         override fun cast(env: CastingEnvironment) {
             val state = env.world.getBlockState(pos)
-            val enchants = EnchantmentHelper.get(stack);
+            val enchants = EnchantmentHelper.get(stack)
             val tier = HexConfig.server().opBreakHarvestLevel()
             if (
                 !state.isAir
@@ -106,7 +105,7 @@ object OpBangleBreak : SpellAction {
                       }
                   }
                 )
-                env.world.breakBlock(pos, true, env.castingEntity as? ServerPlayerEntity)
+                env.world.breakBlock(pos, false, env.castingEntity as? ServerPlayerEntity)
             }
         }
     }
