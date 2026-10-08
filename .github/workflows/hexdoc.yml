@@ -1,0 +1,104 @@
+name: "[Reusable] Build and publish a hexdoc plugin with a web book"
+
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        description: Python version to install
+        type: string
+        required: true
+      release:
+        description: If the book should be written to the release path or the latest path
+        type: boolean
+        required: true
+      props:
+        description: Path to your props file (hexdoc.toml or properties.toml)
+        type: string
+        required: false
+      pip-extras:
+        description: Pip extras for your package (eg. [dev])
+        type: string
+        required: false
+      pip-args:
+        description: Extra arguments when running `uv pip install`
+        type: string
+        required: false
+      deploy-pages:
+        description: If the workflow should deploy to GitHub Pages
+        type: boolean
+        default: true
+      subdirectory:
+        description: Subdirectory to deploy the book to
+        type: string
+        required: false
+      site-url:
+        description: Set the base site url instead of looking up the current repo's GitHub Pages url
+        type: string
+        required: false
+    secrets:
+      GH_TOKEN:
+        required: true
+    outputs:
+      pages-url:
+        description: Current GitHub Pages url for this repo
+        value: ${{ jobs.build.outputs.pages-url }}
+      release:
+        description: Value of inputs.release for convenience
+        value: ${{ inputs.release }}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      pages-url: ${{ steps.build.outputs.pages-url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hexdoc-dev/actions/setup@v1
+        with:
+          python-version: ${{ inputs.python-version }}
+          pip-extras: ${{ inputs.pip-extras }}
+          pip-args: ${{ inputs.pip-args }}
+
+      - id: build
+        uses: hexdoc-dev/actions/build@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          release: ${{ inputs.release }}
+          props: ${{ inputs.props }}
+          subdirectory: ${{ inputs.subdirectory }}
+          site-url: ${{ inputs.site-url }}
+
+  deploy-pages:
+    needs: build
+    if: inputs.deploy-pages
+    runs-on: ubuntu-latest
+    concurrency:
+      group: hexdoc-deploy-pages
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hexdoc-dev/actions/setup@v1
+        with:
+          python-version: ${{ inputs.python-version }}
+          pip-extras: ${{ inputs.pip-extras }}
+          pip-args: ${{ inputs.pip-args }}
+
+      - uses: hexdoc-dev/actions/deploy-pages@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          release: ${{ inputs.release }}
+          props: ${{ inputs.props }}
+          subdirectory: ${{ inputs.subdirectory }}
+          site-url: ${{ needs.build.outputs.pages-url }}
