@@ -26,7 +26,6 @@ public class HiveQueenItems {
 
    public static Item JEWEL_SOCKS;
 
-    public static final Item HEX_COMB = registerItem("hex_comb", new Item(new FabricItemSettings()));
 
     public static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(HiveQueen.MOD_ID, name), item); }
