@@ -3,7 +3,6 @@
   "flag": "hivequeen:show_clockwork_hive_entry",
   "icon": "hivequeen:clockwork_hive",
   "category": "hexcasting:items",
-  "hide_while_locked": "true",
   "pages": [
     {
       "type": "patchouli:text",

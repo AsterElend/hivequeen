@@ -70,6 +70,11 @@ hivequeen = "hexdoc_hivequeen._hooks:HivequeenPlugin"
 pythonVersion = "3.12"
 pythonPlatform = "All"
 
+[tool.hexdoc]
+extra_namespaces = [
+    "botania"
+]
+
 include = ["doc/src"]
 extraPaths = ["doc/src"]
 

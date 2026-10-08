@@ -2,7 +2,7 @@
 
 Python web book docgen and [hexdoc](https://pypi.org/project/hexdoc) plugin for Hivequeen.
 
-Hivequeen addon for Hex Casting.
+*The intense droning of clockwork bees.*
 
 ## Version scheme
 

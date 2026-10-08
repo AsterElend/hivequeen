@@ -1,6 +1,7 @@
 package aster.hivequeen;
 
 import aster.hivequeen.casting.HiveQueenPatterns;
+
 import aster.hivequeen.scrollmaking.RecipeRegistry;
 import at.petrak.hexcasting.interop.HexInterop;
 import me.shedaniel.autoconfig.AutoConfig;

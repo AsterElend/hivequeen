@@ -3,7 +3,7 @@
   "icon": "hivequeen:jewel_socks",
   "category": "hexcasting:interop",
   "flag": "mod:trinkets",
-  "hide_while_locked": true,
+
   "pages": [
     {
       "type": "patchouli:spotlight",

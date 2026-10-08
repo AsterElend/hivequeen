@@ -12,7 +12,7 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "MIT",
-	"icon": "assets/hivequeen/textures/icon.png",
+	"icon": "assets/hivequeen/textures/item/hex_comb.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [

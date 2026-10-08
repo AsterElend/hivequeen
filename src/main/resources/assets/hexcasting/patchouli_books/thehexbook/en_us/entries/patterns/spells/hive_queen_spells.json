@@ -1,8 +1,7 @@
 {
   "name": "hivequeen.entry.spells",
-  "icon": "hivequeen:textures/icon.png",
+  "icon": "hivequeen:hex_comb",
   "category": "hexcasting:patterns/spells",
-  "advancement": "hexcasting:root",
   "pages": [
     {
       "type": "hexcasting:pattern",
