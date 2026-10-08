@@ -1,0 +1,12 @@
+name: Call Hexdoc
+on: workflow_dispatch
+jobs:
+  call-reusable-flow:
+    uses: ./.github/workflows/hexdoc.yml
+    with:
+      python-version: 3.12.15
+      release: true
+      deploy-pages: true
+      secrets:
+      API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
